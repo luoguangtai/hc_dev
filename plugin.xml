@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+      		adaptable="true"
+            objectClass="org.eclipse.core.resources.IProject"
+            id="hc_dev.contribution1">
+         <menu
+               label="hc开发助手"
+               icon="icons/helper.png"
+               path="org.eclipse.jdt.ui.refactoring.menu"
+               id="hc_dev">
+            <separator name="group1"></separator>
+         </menu>
+         <action
+               label="参数设置"
+               icon="icons/setup.png"
+               class="hc_dev.popup.actions.SetupAction"
+               menubarPath="hc_dev/group1"
+               enablesFor="1"
+               id="hc_dev.newAction">
+         </action>
+         <action
+               label="代码生成"
+               icon="icons/generator.png"
+               class="hc_dev.popup.actions.JavaGeneratorAction"
+               menubarPath="hc_dev/group1"
+               enablesFor="1"
+               id="hc_dev.JavaGeneratorAction">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
